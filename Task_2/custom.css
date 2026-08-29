@@ -1,0 +1,300 @@
+/* =====================================================
+   E-Cell UIET Kurukshetra — custom.css
+   Dot pattern, form inputs, particle canvas extras
+   ===================================================== */
+
+/* ── Gradient text — cross-browser fix ──
+   Tailwind's `text-transparent` only sets color:transparent.
+   WebKit browsers also need -webkit-text-fill-color:transparent
+   for bg-clip-text to actually show the gradient.
+   Using this class on all gradient heading spans fixes the issue. */
+.grad-text {
+  background: linear-gradient(135deg, #4f9eff 0%, #06b6d4 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* non-webkit fallback */
+}
+
+/* ── Global font defaults ── */
+body { font-family: 'Inter', sans-serif; }
+h1,h2,h3,h4,h5,h6,
+.font-heading { font-family: 'Outfit', sans-serif; }
+
+/* ── Dot pattern background ── */
+.dot-bg {
+  background-image: radial-gradient(
+    circle,
+    rgba(79, 158, 255, 0.22) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 26px 26px;
+  background-repeat: repeat;
+}
+
+/* Subtle dot variant for lighter sections */
+.dot-bg-faint {
+  background-image: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+/* ── Navbar scrolled glass effect ── */
+#navbar.scrolled {
+  background: rgba(6, 9, 22, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Form inputs unified style ── */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: #f0f4ff;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-input::placeholder {
+  color: rgba(100, 116, 139, 0.7);
+}
+.form-input:focus {
+  border-color: rgba(79, 158, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(79, 158, 255, 0.12);
+}
+
+/* Select arrow */
+select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+select.form-input option {
+  background: #0d1528;
+  color: #f0f4ff;
+}
+
+/* ── About cards stagger transition delay ── */
+#about-card-1 { transition-delay: 0ms; }
+#about-card-2 { transition-delay: 80ms; }
+#about-card-3 { transition-delay: 160ms; }
+#about-card-4 { transition-delay: 240ms; }
+
+/* ── Event cards stagger ── */
+#event-card-1 { transition-delay: 0ms; }
+#event-card-2 { transition-delay: 80ms; }
+#event-card-3 { transition-delay: 160ms; }
+#event-card-4 { transition-delay: 240ms; }
+
+/* ── Team cards stagger ── */
+#team-card-1 { transition-delay: 0ms; }
+#team-card-2 { transition-delay: 60ms; }
+#team-card-3 { transition-delay: 120ms; }
+#team-card-4 { transition-delay: 180ms; }
+#team-card-5 { transition-delay: 240ms; }
+#team-card-6 { transition-delay: 300ms; }
+
+/* ── Hero stat numbers — gradient text fix ── */
+.stat-num {
+  background: linear-gradient(135deg, #4f9eff, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hamburger open state ── */
+#hamburger.open .ham-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#hamburger.open .ham-line:nth-child(2) {
+  opacity: 0;
+}
+#hamburger.open .ham-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Smooth section transitions ── */
+section {
+  position: relative;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060916;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 158, 255, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 158, 255, 0.5);
+}
+
+/* ── Selection color ── */
+::selection {
+  background: rgba(79, 158, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ── Tailwind transition-duration-400 custom ── */
+.duration-400 {
+  transition-duration: 400ms;
+}
+
+/* ── Mobile nav link active state ── */
+.mobile-nav-link.active {
+  color: #4f9eff;
+  background: rgba(79, 158, 255, 0.08);
+}
+
+/* ── Page load animation ── */
+@keyframes pageLoad {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body {
+  animation: pageLoad 0.5s ease forwards;
+}
+
+/* ── Glassmorphism card backdrop ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Neon text glow helper ── */
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(79, 158, 255, 0.6);
+}
+.text-glow-purple {
+  text-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+}
+
+/* ── Responsive dot size ── */
+@media (max-width: 640px) {
+  .dot-bg {
+    background-size: 20px 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .dot-bg {
+    background-size: 30px 30px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL ANIMATED CIRCUIT GRID
+   Fixed canvas sits at z-index 3:
+     above solid section backgrounds (z:auto)
+     above ambient glow divs (z:1-2)
+     below section text content (z:10)
+     below hero particle canvas (z:4)
+   ══════════════════════════════════════════════════════ */
+#global-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  /* canvas opacity is controlled per-element in JS */
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION-TO-SECTION SMOOTH GRADIENT TRANSITIONS
+   ::before pseudo-elements blend the previous section's
+   background color into the current section's color.
+   Height matches section padding so text is never obscured.
+   ══════════════════════════════════════════════════════ */
+
+/* Shared properties for all section transition overlays */
+#about::before,
+#events::before,
+#team::before,
+#join::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  pointer-events: none;
+  z-index: 5; /* above glow divs (z:1-3), below content (z:10) */
+}
+
+/* Hero (#060916) → About (#0d1528) */
+#about::before {
+  background: linear-gradient(to bottom, #060916 0%, transparent 100%);
+}
+
+/* About (#0d1528) → Events (#060916) */
+#events::before {
+  background: linear-gradient(to bottom, #0d1528 0%, transparent 100%);
+}
+
+/* Events (#060916) → Team (#0d1528) */
+#team::before {
+  background: linear-gradient(to bottom, #060916 0%, transparent 100%);
+}
+
+/* Team (#0d1528) → Join (#060916) */
+#join::before {
+  background: linear-gradient(to bottom, #0d1528 0%, transparent 100%);
+}
+
+/* Join (#060916) → Contact (#0d1528) */
+#contact::before {
+  background: linear-gradient(to bottom, #060916 0%, transparent 100%);
+}
+
+/* ── Bottom fades — each section bleeds into the next ── */
+#home::after,
+#about::after,
+#events::after,
+#team::after,
+#join::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#home::after   { background: linear-gradient(to top, #0d1528 0%, transparent 100%); }
+#about::after  { background: linear-gradient(to top, #060916 0%, transparent 100%); }
+#events::after { background: linear-gradient(to top, #0d1528 0%, transparent 100%); }
+#team::after   { background: linear-gradient(to top, #060916 0%, transparent 100%); }
+#join::after   { background: linear-gradient(to top, #0d1528 0%, transparent 100%); }
