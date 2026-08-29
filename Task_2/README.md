@@ -44,15 +44,14 @@ This project contains several custom components designed to optimize performance
 
 ```bash
 /project_2
-├── index.html         # Main entry point with Tailwind CDN and custom HTML5 layout
-├── script.js          # Interactive systems (Canvas loops, reveal observers, forms, counter animation)
+├── README.md          # Project documentation (this file)
 ├── custom.css         # Keyframe animations, staggered transitions, custom scrollbars, section bleed fades
-├── style.css          # Alternate legacy stylesheet containing a pure-CSS design system layout
 ├── ecell_logo.png     # Brand logo asset (transparent background)
 ├── hero_bg.png        # Subdued layout image for the hero section
-├── video_2.mp4        # Interactive promotional video asset
-├── Project_2.zip      # Source archive bundle
-└── README.md          # Project documentation (this file)
+├── index.html         # Main entry point with Tailwind CDN and custom HTML5 layout
+├── script.js          # Interactive systems (Canvas loops, reveal observers, forms, counter animation)
+├── style.css          # Alternate legacy stylesheet containing a pure-CSS design system layout
+└── video_2.mp4        # Interactive promotional video asset
 ```
 
 ---
