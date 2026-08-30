@@ -1,8 +1,9 @@
 # E-Cell UIET KUK — Recruitment Task Submission 🚀
 
 A responsive web application featuring the official portal for the **Entrepreneurship Cell (E-Cell), UIET Kurukshetra University**, alongside an interactive **Idea Submission & Selection Form**.
-Task_1 : Idea Submission
-Task_2 : E-CELL UIET KURURKSHETRA WEBSITE
+
+* **Task_1 :** Idea Submission.
+* **Task_2 :** E-CELL UIET KURURKSHETRA WEBSITE.
 
 ---
 
